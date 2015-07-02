@@ -1,6 +1,9 @@
 The code for the slide that go with my talk "Improving App Quality"
 
-Specatacle docs below:
+Slides available at app-quality.slides.jamiepenney.co.nz
+
+Uses Spectacle https://github.com/FormidableLabs/spectacle
+
 
 #Spectacle
 ReactJS based Presentation Library
