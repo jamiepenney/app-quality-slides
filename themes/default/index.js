@@ -1,14 +1,15 @@
-const colors = {
-  primary: "#f9c300",
+var colors = {
+  primary: "#334E69",
   secondary: "black",
-  tertiary: "white"
+  tertiary: "white",
+  text: "white"
 };
 
-const fonts = {
-  primary: "Open Sans Condensed",
+var fonts = {
+  primary: "Open Sans",
   secondary: "Lobster Two",
   tertiary: "monospace"
-};
+}
 
 module.exports = {
   colors: colors,
@@ -155,53 +156,53 @@ module.exports = {
     },
     heading: {
       h1: {
-        color: colors.tertiary,
-        fontSize: "7.05em",
+        color: colors.text,
+        fontSize: '7.05em',
         fontFamily: fonts.primary,
         lineHeight: 1,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         margin: 0,
         zoom: 1
       },
       h2: {
-        color: colors.secondary,
-        fontSize: "5.88em",
+        color: colors.text,
+        fontSize: '5.88em',
         fontFamily: fonts.primary,
         lineHeight: 1,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         margin: 0
       },
       h3: {
-        color: "black",
-        fontSize: "4.9em",
+        color: colors.text,
+        fontSize: '4.9em',
         fontFamily: fonts.secondary,
         lineHeight: 1,
-        fontWeight: "bold",
-        margin: "0.5em auto"
+        fontWeight: 'bold',
+        margin: '0.5em auto'
       },
       h4: {
-        color: "black",
-        fontSize: "3.82em",
+        color: colors.text,
+        fontSize: '3.82em',
         fontFamily: fonts.primary,
         lineHeight: 1,
-        fontWeight: "bold",
-        margin: "0.5em auto"
+        fontWeight: 'bold',
+        margin: '0.5em auto'
       },
       h5: {
-        color: "black",
-        fontSize: "3.19em",
+        color: colors.text,
+        fontSize: '3.19em',
         fontFamily: fonts.primary,
         lineHeight: 1,
-        fontWeight: "bold",
-        margin: "0.5em auto"
+        fontWeight: 'bold',
+        margin: '0.5em auto'
       },
       h6: {
-        color: "black",
-        fontSize: "2.66em",
+        color: colors.text,
+        fontSize: '2.66em',
         fontFamily: fonts.primary,
         lineHeight: 1,
-        fontWeight: "bold",
-        margin: "0.5em auto"
+        fontWeight: 'bold',
+        margin: '0.5em auto'
       }
     },
     image: {
@@ -212,7 +213,8 @@ module.exports = {
       textDecoration: "none"
     },
     listItem: {
-      fontSize: "2.66em"
+      fontSize: '2.66em'
+      color: colors.text
     },
     list: {
       textAlign: "left",
@@ -223,8 +225,8 @@ module.exports = {
       strikethrough: {}
     },
     text: {
-      color: "black",
-      fontSize: "2.66em",
+      color: colors.text',
+      fontSize: '2.66em',
       fontFamily: fonts.primary,
       margin: "0.25em auto"
     }
