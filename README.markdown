@@ -1,3 +1,7 @@
+The code for the slide that go with my talk "Improving App Quality"
+
+Specatacle docs below:
+
 #Spectacle
 ReactJS based Presentation Library
 
