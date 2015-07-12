@@ -213,7 +213,7 @@ module.exports = {
       textDecoration: "none"
     },
     listItem: {
-      fontSize: '2.66em'
+      fontSize: '2.66em',
       color: colors.text
     },
     list: {
@@ -225,7 +225,7 @@ module.exports = {
       strikethrough: {}
     },
     text: {
-      color: colors.text',
+      color: colors.text,
       fontSize: '2.66em',
       fontFamily: fonts.primary,
       margin: "0.25em auto"
