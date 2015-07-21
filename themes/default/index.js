@@ -116,7 +116,7 @@ module.exports = {
       display: "block",
       color: colors.primary,
       fontSize: "4.9em",
-      lineHeight: 1,
+      lineHeight: 1.5,
       fontWeight: "bold"
     },
     cite: {
