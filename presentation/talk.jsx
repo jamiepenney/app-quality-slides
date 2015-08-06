@@ -13,19 +13,25 @@ const images = {
   icon: require('./raygun_icon_1024px_flat_white_transparent.png'),
   background: require('./background.jpg'),
   ostrich1: require('./IMG_0436.jpg'),
-  ostrich2: require('./IMG_0437.jpg')
+  ostrich2: require('./IMG_0437.jpg'),
+  slacknotification: require('./raygun_slacknotification.png'),
+  errordetails: require('./raygun_errordetails.png'),
+  errordetails2: require('./raygun_errordetails2.png'),
+  intercomcrazy: require('./raygun_intercomcrazy.png'),
+  affectedusers: require('./raygun_affectedusers.png'),
+  affecteduser_alex: require('./raygun_affecteduser_alex.png'),
+  integrations: require('./raygun_integrations.png')
 };
 
-preloader([images.logo, images.icon, images.background, images.ostrich1, images.ostrich2]);
+preloader([images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, images.errordetails]);
 
 export default class extends React.Component {
   render() {
     return (
       <Deck transition={[]}>
-        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0">
-          <Image src={images.icon.replace('/','')} height="250px"/>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start">
           <Heading size={1} caps>
-            Improving Your App Quality
+            Improving App Quality
           </Heading>
           <Appear>
             <Heading size={5} italic>
@@ -37,8 +43,8 @@ export default class extends React.Component {
             <Heading size={1} caps>
             Jamie Penney
             </Heading>
-            
             <Link href="https://twitter.com/jamiepenney"><Text>@jamiepenney</Text></Link>
+            <Image src={images.icon.replace('/','')} height="150px"/>
             <Text>Senior Software Engineer at Raygun.io</Text>
             <Link href="https://twitter.com/raygunio"><Text>Follow @raygunio on Twitter</Text></Link>
         </Slide>
@@ -110,11 +116,43 @@ export default class extends React.Component {
             <Heading size={1} caps>
                 Notifications
             </Heading>
+            <Appear>
+                <Image src={images.slacknotification.replace('/','')} height="75px" margin="50px"/>
+            </Appear>
         </Slide>
-		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
-			notes="">
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="URL and stack trace help me triage and assign errors">
             <Heading size={1} caps>
-                Handy tools
+                Error details
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="URL and stack trace help me triage and assign errors">
+            <Image src={images.errordetails.replace('/','')} height="500px"/>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="URL and stack trace help me triage and assign errors">
+            <Image src={images.errordetails2.replace('/','')} height="500px"/>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1}>
+                Oh it's that guy
+            </Heading>
+            <Appear>
+                <Image src={images.intercomcrazy.replace('/','')} height="75px" margin="50px"/>
+            </Appear>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1}>
+                Never mind then
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1}>
+                Speaking of tin foil hats...
             </Heading>
 		</Slide>
 		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
@@ -122,17 +160,58 @@ export default class extends React.Component {
             <Heading size={1} caps>
                 User tracking
             </Heading>
+            <Appear>
+                <Heading size={5} italic>
+				But not in a creepy way
+                </Heading>
+            </Appear>
 		</Slide>
-		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
-			notes="URL and stack trace help me triage and assign errors">
-            <Heading size={1} caps>
-                Error details
-            </Heading>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Image src={images.affectedusers.replace('/','')} height="250px"/>
+            <Text>At least this error has only happened to this guy</Text>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1}>Here's a non-bot user</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Image src={images.affecteduser_alex.replace('/','')} height="400px"/>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={2}>This is all opt-in.</Heading>
+            <Text size={2}>You don't have to give all this info to us, we get the rest from an external service called Full Contact.</Text>
+            <Text size={2}>You can turn this off in the app or by not sending us email addresses if you have compliance issues around PII.</Text>
 		</Slide>
 		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
 			notes="We use Slack internally - different apps report to different channels">
             <Heading size={1} caps>
                 Integrations
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="We use Slack internally - different apps report to different channels">
+            <Heading size={2}>
+                Have I mentioned our Slack integration?
+            </Heading>
+            <Text italic>God I love Slack. Death to email!</Text>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="We use Slack internally - different apps report to different channels">
+            <Heading size={1}>
+                We also have heaps of other integrations
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Image src={images.integrations.replace('/','')} height="500px"/>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="We use Slack internally - different apps report to different channels">
+            <Heading size={2}>
+                Too many to talk about
             </Heading>
 		</Slide>
       </Deck>
