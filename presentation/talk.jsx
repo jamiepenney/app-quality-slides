@@ -23,7 +23,10 @@ const images = {
   integrations: require('./raygun_integrations.png')
 };
 
-preloader([images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, images.errordetails]);
+preloader([
+    images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, 
+    images.slacknotification, images.errordetails, images.errordetails2, images.intercomcrazy,
+    images.affectedusers, images.affecteduser_alex, images.integrations]);
 
 export default class extends React.Component {
   render() {
@@ -186,7 +189,7 @@ export default class extends React.Component {
             <Text size={2}>You can turn this off in the app or by not sending us email addresses if you have compliance issues around PII.</Text>
 		</Slide>
 		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
-			notes="We use Slack internally - different apps report to different channels">
+			notes="">
             <Heading size={1} caps>
                 Integrations
             </Heading>
@@ -196,10 +199,9 @@ export default class extends React.Component {
             <Heading size={2}>
                 Have I mentioned our Slack integration?
             </Heading>
-            <Text italic>God I love Slack. Death to email!</Text>
 		</Slide>
         <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
-			notes="We use Slack internally - different apps report to different channels">
+			notes="">
             <Heading size={1}>
                 We also have heaps of other integrations
             </Heading>
@@ -209,9 +211,15 @@ export default class extends React.Component {
             <Image src={images.integrations.replace('/','')} height="500px"/>
 		</Slide>
         <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
-			notes="We use Slack internally - different apps report to different channels">
+			notes="">
             <Heading size={2}>
-                Too many to talk about
+                Too many to talk about individually
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1} caps>
+                Demo time!
             </Heading>
 		</Slide>
       </Deck>
