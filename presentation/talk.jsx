@@ -20,13 +20,14 @@ const images = {
   intercomcrazy: require('./raygun_intercomcrazy.png'),
   affectedusers: require('./raygun_affectedusers.png'),
   affecteduser_alex: require('./raygun_affecteduser_alex.png'),
-  integrations: require('./raygun_integrations.png')
+  integrations: require('./raygun_integrations.png'),
+  architecture: require('./architecture.svg')
 };
 
 preloader([
     images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, 
     images.slacknotification, images.errordetails, images.errordetails2, images.intercomcrazy,
-    images.affectedusers, images.affecteduser_alex, images.integrations]);
+    images.affectedusers, images.affecteduser_alex, images.integrations, images.architecture]);
 
 export default class extends React.Component {
   render() {
@@ -221,6 +222,50 @@ export default class extends React.Component {
             <Heading size={1} caps>
                 Demo time!
             </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1} caps>
+                A little about Raygun's architecture
+            </Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Image src={images.architecture} height="500px"/>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>API does the bare minimum to queue the error event</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>Main Worker groups the error and updates the main database if needed</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>Search Worker sticks it into Elastic Search for indexing</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>Storage Worker puts the raw error data into S3</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>Notification worker sends emails and triggers integrations</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>The App itself reads from the Database, Elastic Search and S3</Heading>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={4}>The important part: The API and Workers communicate over queues</Heading>
+            <Text>Breaking one of those doesn't take the whole system down</Text>
+            <Text>And as long as you don't break the database, the app stays up</Text>
+		</Slide>
+        <Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="">
+            <Heading size={1} caps>Q and A</Heading>
 		</Slide>
       </Deck>
     )

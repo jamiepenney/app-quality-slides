@@ -1,0 +1,27 @@
+digraph "Raygun Architecture" {
+	node [shape=box];
+	
+    
+	Database [shape=ellipse];
+	S3 [shape=ellipse];
+    "Elastic Search" [shape=ellipse];
+    "Email + Integrations" [shape=ellipse];
+	
+	API -> "Main Worker" [style=dotted];
+    
+    "Main Worker" -> "Notification Worker" [style=dotted];
+    "Notification Worker" -> "Email + Integrations";
+    
+    "Main Worker" -> "Database";
+    "Main Worker" -> "Search Worker" [style=dotted];
+    "Search Worker" -> "Elastic Search";
+    "Main Worker" -> "Storage Worker" [style=dotted];
+    "Storage Worker" -> S3;
+    
+	App -> Database;
+    App -> S3;
+    App -> "Elastic Search";
+    { rank = max; App; }
+    { rank = same; "Search Worker"; "Notification Worker"; "Storage Worker"; }
+    { rank = same; "Database"; "S3"; "Elastic Search"; }
+}
