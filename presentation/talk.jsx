@@ -14,6 +14,7 @@ const images = {
   background: require('./background.jpg'),
   ostrich1: require('./IMG_0436.jpg'),
   ostrich2: require('./IMG_0437.jpg'),
+  dailydigest: require('./raygun_dailydigest.png'),
   slacknotification: require('./raygun_slacknotification.png'),
   errordetails: require('./raygun_errordetails.png'),
   errordetails2: require('./raygun_errordetails2.png'),
@@ -25,7 +26,7 @@ const images = {
 };
 
 preloader([
-    images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, 
+    images.logo, images.icon, images.background, images.ostrich1, images.ostrich2, images.dailydigest,
     images.slacknotification, images.errordetails, images.errordetails2, images.intercomcrazy,
     images.affectedusers, images.affecteduser_alex, images.integrations, images.architecture]);
 
@@ -105,6 +106,10 @@ export default class extends React.Component {
             <Heading size={1} caps>
                 The Daily Digest
             </Heading>
+        </Slide>
+		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
+			notes="Shows the errors that have happened in the last 24 hours">
+            <Image src={images.dailydigest.replace('/','')} height="500px"/>
         </Slide>
 		<Slide bgColor="primary" bgImage={images.background.replace('/','')} bgDarken="0" align="center flex-start"
 			notes="Customers seem surprised and happy when I say we've seen their error and assigned it already. I'M USING THE SAME TOOL AS YOU GUYS!">
